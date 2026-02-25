@@ -1,4 +1,5 @@
 import { ClipboardList, Wrench, Settings } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const steps = [
   { icon: ClipboardList, step: "01", title: "Plan", desc: "We audit your site, analyse your needs, and engineer a solution tailored to your operation and compliance requirements." },
@@ -9,7 +10,7 @@ const steps = [
 const SolutionSection = () => (
   <section className="section-padding bg-background">
     <div className="container-narrow">
-      <div className="text-center mb-16">
+      <ScrollReveal className="text-center mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4">
           How We Work
         </div>
@@ -17,19 +18,21 @@ const SolutionSection = () => (
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
           One expert team. One accountable process. From design to certification.
         </p>
-      </div>
+      </ScrollReveal>
       <div className="grid md:grid-cols-3 gap-8">
-        {steps.map((s) => (
-          <div key={s.step} className="bg-card rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl gradient-cta flex items-center justify-center">
-                <s.icon className="w-6 h-6 text-primary-foreground" />
+        {steps.map((s, i) => (
+          <ScrollReveal key={s.step} delay={i * 150}>
+            <div className="bg-card rounded-2xl p-8 border border-border shadow-sm hover-lift h-full group">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl gradient-cta flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <s.icon className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <span className="text-4xl font-extrabold text-muted-foreground/20 group-hover:text-primary/20 transition-colors">{s.step}</span>
               </div>
-              <span className="text-4xl font-extrabold text-muted-foreground/20">{s.step}</span>
+              <h3 className="text-xl font-bold mb-3">{s.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
             </div>
-            <h3 className="text-xl font-bold mb-3">{s.title}</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
     </div>

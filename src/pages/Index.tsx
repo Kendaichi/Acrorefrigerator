@@ -1,14 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Layout from "@/components/Layout";
+import Hero from "@/components/home/Hero";
+import TrustBar from "@/components/home/TrustBar";
+import ProblemSection from "@/components/home/ProblemSection";
+import SolutionSection from "@/components/home/SolutionSection";
+import CapabilitiesGrid from "@/components/home/CapabilitiesGrid";
+import ProcessTimeline from "@/components/home/ProcessTimeline";
+import IndustryCards from "@/components/home/IndustryCards";
+import Testimonials from "@/components/home/Testimonials";
+import CTABanner from "@/components/home/CTABanner";
+import FAQSection from "@/components/home/FAQSection";
 
-const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
-};
+const Index = () => (
+  <Layout>
+    <Hero />
+    <TrustBar />
+    <ProblemSection />
+    <SolutionSection />
+    <CapabilitiesGrid />
+    <ProcessTimeline />
+    <IndustryCards />
+    <Testimonials />
+    <CTABanner />
+    <FAQSection />
+  </Layout>
+);
 
 export default Index;

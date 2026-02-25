@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,36 +7,45 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --foreground: 0 0% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 0 0% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 0 0% 12%;
 
-    --primary: 22 100% 55%;
+    --primary: 0 73% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 10% 96%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 12%;
 
-    --muted: 220 10% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 220 10% 96%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 0 72% 57%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 22 100% 55%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 73% 40%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    --dark-bg: 228 20% 7%;
+    --surface: 0 0% 98%;
+    --surface-foreground: 0 0% 25%;
+
+    --hero-gradient: linear-gradient(135deg, hsl(0 73% 40%) 0%, hsl(0 50% 25%) 100%);
+    --card-shadow: 0 1px 3px 0 rgba(0,0,0,0.06), 0 1px 2px -1px rgba(0,0,0,0.06);
+    --card-shadow-hover: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+    --shadow-elevated: 0 20px 40px -12px rgba(179,27,27,0.15);
+
+    /* Footer dark section */
+    --dark-bg: 0 0% 8%;
     --dark-bg-foreground: 0 0% 95%;
 
     --sidebar-background: 0 0% 98%;
@@ -46,37 +55,7 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 22 100% 55%;
-  }
-
-  .dark {
-    --background: 228 20% 7%;
-    --foreground: 0 0% 95%;
-    --card: 228 18% 10%;
-    --card-foreground: 0 0% 95%;
-    --popover: 228 18% 10%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 22 100% 55%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 228 15% 15%;
-    --secondary-foreground: 0 0% 95%;
-    --muted: 228 15% 15%;
-    --muted-foreground: 220 9% 60%;
-    --accent: 228 15% 15%;
-    --accent-foreground: 0 0% 95%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 228 15% 18%;
-    --input: 228 15% 18%;
-    --ring: 22 100% 55%;
-    --sidebar-background: 228 20% 7%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 22 100% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 228 15% 15%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 228 15% 18%;
-    --sidebar-ring: 22 100% 55%;
+    --sidebar-ring: 0 73% 40%;
   }
 }
 
@@ -89,7 +68,15 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  h4, h5, h6 {
     @apply font-bold tracking-tight;
   }
 }
@@ -112,7 +99,28 @@
   }
 
   .gradient-cta {
-    background: linear-gradient(135deg, hsl(22, 100%, 55%), hsl(30, 100%, 50%));
+    background: var(--hero-gradient);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--hero-gradient);
+  }
+
+  .bg-surface {
+    background-color: hsl(var(--surface));
+  }
+
+  .shadow-card {
+    box-shadow: var(--card-shadow);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
   }
 
   .hover-lift {
@@ -129,10 +137,19 @@
 }
 
 .story-link *::after {
-  content: '';
+  content: "";
   @apply absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-primary origin-bottom-right transition-transform duration-300;
 }
 
 .story-link *:hover::after {
   @apply scale-x-100 origin-bottom-left;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
 }

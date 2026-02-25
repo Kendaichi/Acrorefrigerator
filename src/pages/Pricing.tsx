@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import CTABanner from "@/components/home/CTABanner";
 import FAQSection from "@/components/home/FAQSection";
+import { motion, Variants } from "framer-motion";
 
 const tiers = [
   {
@@ -27,18 +28,48 @@ const tiers = [
   },
 ];
 
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const cardVariant: Variants = {
+  hidden: { opacity: 0, y: 40, scale: 0.97 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut", delay: i * 0.12 },
+  }),
+};
+
 const Pricing = () => (
   <Layout>
     <section className="section-padding bg-background">
       <div className="container-narrow">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4">Pricing</div>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Transparent Pricing</h1>
-          <p className="text-lg text-muted-foreground">Every project is unique. These guides give you a starting point — get a custom quote for accurate pricing.</p>
-        </div>
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-16"
+          initial="hidden"
+          animate="visible"
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+        >
+          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4">Pricing</motion.div>
+          <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-extrabold mb-6">Transparent Pricing</motion.h1>
+          <motion.p variants={fadeUp} className="text-lg text-muted-foreground">Every project is unique. These guides give you a starting point — get a custom quote for accurate pricing.</motion.p>
+        </motion.div>
+
         <div className="grid md:grid-cols-3 gap-6">
-          {tiers.map((t) => (
-            <div key={t.name} className={`bg-card rounded-2xl p-8 border shadow-sm relative ${t.popular ? "border-primary shadow-md" : "border-border"}`}>
+          {tiers.map((t, i) => (
+            <motion.div
+              key={t.name}
+              custom={i}
+              variants={cardVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className={`bg-card rounded-2xl p-8 border shadow-sm relative ${t.popular ? "border-primary shadow-md" : "border-border"}`}
+            >
               {t.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 gradient-cta text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full">
                   Most Popular
@@ -57,7 +88,7 @@ const Pricing = () => (
               <Button asChild className="w-full" variant={t.popular ? "default" : "outline"}>
                 <Link to="/contact">Get a Quote <ArrowRight className="w-4 h-4 ml-2" /></Link>
               </Button>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

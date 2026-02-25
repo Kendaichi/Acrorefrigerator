@@ -20,7 +20,7 @@ const CTABanner = () => (
                 Get a Free Quote <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="text-base px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground hover-scale">
+            <Button asChild size="lg" variant="outline" className="text-base px-8 bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground hover-scale">
               <a href="tel:1300000000">
                 <Phone className="w-4 h-4 mr-2" /> Call 1300 000 000
               </a>

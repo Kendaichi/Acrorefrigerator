@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { UtensilsCrossed, ShoppingCart, Pill, Warehouse, Factory, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CTABanner from "@/components/home/CTABanner";
+import { motion, Variants } from "framer-motion";
 
 const industries = [
   { icon: UtensilsCrossed, title: "Restaurants & Hospitality", desc: "Walk-in coolrooms, freezer rooms, and bar refrigeration designed for the demands of commercial kitchens. HACCP-compliant systems that keep your kitchen inspection-ready.", features: ["Walk-in coolrooms", "Blast chillers", "Bar fridges", "HACCP compliance"] },
@@ -12,18 +13,46 @@ const industries = [
   { icon: Factory, title: "Food Production & Manufacturing", desc: "Processing rooms, blast freezers, and production-line refrigeration for food manufacturers. Engineered for continuous operation and regulatory compliance.", features: ["Blast freezing", "Processing rooms", "Clean rooms", "Continuous ops"] },
 ];
 
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const featureVariant: Variants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: "easeOut" } },
+};
+
+const featureStagger: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.07 } },
+};
+
 const Industries = () => (
   <Layout>
     <section className="section-padding bg-background">
       <div className="container-narrow">
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4">Industries</div>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Refrigeration for Every Industry</h1>
-          <p className="text-lg text-muted-foreground">Specialised cold storage solutions tailored to the unique requirements of your sector.</p>
-        </div>
+        <motion.div
+          className="max-w-3xl mb-16"
+          initial="hidden"
+          animate="visible"
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+        >
+          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4">Industries</motion.div>
+          <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-extrabold mb-6">Refrigeration for Every Industry</motion.h1>
+          <motion.p variants={fadeUp} className="text-lg text-muted-foreground">Specialised cold storage solutions tailored to the unique requirements of your sector.</motion.p>
+        </motion.div>
+
         <div className="space-y-8">
           {industries.map((ind, i) => (
-            <div key={ind.title} className={`grid lg:grid-cols-2 gap-8 items-center bg-card rounded-2xl border border-border shadow-sm p-8 md:p-12 ${i % 2 === 1 ? "lg:direction-rtl" : ""}`}>
+            <motion.div
+              key={ind.title}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className={`grid lg:grid-cols-2 gap-8 items-center bg-card rounded-2xl border border-border shadow-sm p-8 md:p-12 ${i % 2 === 1 ? "lg:direction-rtl" : ""}`}
+            >
               <div>
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
                   <ind.icon className="w-6 h-6 text-primary" />
@@ -34,12 +63,18 @@ const Industries = () => (
                   <Link to="/contact">Discuss Your Project <ArrowRight className="w-4 h-4 ml-2" /></Link>
                 </Button>
               </div>
-              <div className="grid grid-cols-2 gap-3">
+              <motion.div
+                className="grid grid-cols-2 gap-3"
+                variants={featureStagger}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+              >
                 {ind.features.map((f) => (
-                  <div key={f} className="bg-secondary rounded-xl px-4 py-3 text-sm font-medium text-center">{f}</div>
+                  <motion.div key={f} variants={featureVariant} className="bg-secondary rounded-xl px-4 py-3 text-sm font-medium text-center">{f}</motion.div>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>

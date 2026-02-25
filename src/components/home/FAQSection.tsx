@@ -1,4 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const faqs = [
   { q: "How long does a commercial cold room installation take?", a: "Most installations are completed within 2–4 weeks depending on size and complexity. Our project managers provide a detailed timeline during the consultation phase." },
@@ -11,16 +12,18 @@ const faqs = [
 const FAQSection = () => (
   <section className="section-padding bg-background">
     <div className="container-narrow max-w-3xl">
-      <div className="text-center mb-12">
+      <ScrollReveal className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Frequently Asked Questions</h2>
         <p className="text-muted-foreground text-lg">Common questions about our refrigeration services.</p>
-      </div>
+      </ScrollReveal>
       <Accordion type="single" collapsible className="space-y-3">
         {faqs.map((faq, i) => (
-          <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-xl border border-border px-6 shadow-sm">
-            <AccordionTrigger className="text-left font-semibold text-sm py-5 hover:no-underline">{faq.q}</AccordionTrigger>
-            <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-5">{faq.a}</AccordionContent>
-          </AccordionItem>
+          <ScrollReveal key={i} delay={i * 60}>
+            <AccordionItem value={`faq-${i}`} className="bg-card rounded-xl border border-border px-6 shadow-sm hover:shadow-md transition-shadow">
+              <AccordionTrigger className="text-left font-semibold text-sm py-5 hover:no-underline">{faq.q}</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-5">{faq.a}</AccordionContent>
+            </AccordionItem>
+          </ScrollReveal>
         ))}
       </Accordion>
     </div>

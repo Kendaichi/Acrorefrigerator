@@ -3,16 +3,17 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import Index from "./pages/Index";
-import Services from "./pages/Services";
-import Industries from "./pages/Industries";
-import Process from "./pages/Process";
-import Projects from "./pages/Projects";
-import Pricing from "./pages/Pricing";
-import Resources from "./pages/Resources";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+import { useEffect, lazy, Suspense } from "react";
+
+const Index = lazy(() => import("./pages/Index"));
+const Services = lazy(() => import("./pages/Services"));
+const Industries = lazy(() => import("./pages/Industries"));
+const Process = lazy(() => import("./pages/Process"));
+const Projects = lazy(() => import("./pages/Projects"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const Resources = lazy(() => import("./pages/Resources"));
+const Contact = lazy(() => import("./pages/Contact"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -29,17 +30,19 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/industries" element={<Industries />} />
-          <Route path="/process" element={<Process />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/industries" element={<Industries />} />
+            <Route path="/process" element={<Process />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

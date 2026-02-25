@@ -21,7 +21,7 @@ const clients = [
 ];
 
 const ClientsSection = () => (
-  <section className="bg-secondary py-16 px-6">
+  <section className="bg-secondary py-12 sm:py-16 px-4 sm:px-6">
     <div className="container-narrow">
       <ScrollReveal className="text-center mb-12">
         <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
@@ -31,7 +31,7 @@ const ClientsSection = () => (
           Proudly Serving Queensland's Best
         </h2>
       </ScrollReveal>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 items-center">
         {clients.map((client, i) => (
           <ScrollReveal key={client.alt} delay={i * 80}>
             <div className="flex items-center justify-center p-4 rounded-xl bg-background border border-border h-24 hover-lift">

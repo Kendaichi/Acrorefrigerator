@@ -72,7 +72,7 @@ const Hero = () => {
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6"
             >
               Commercial Cold Rooms Built for{" "}
               <span className="text-primary">Compliance</span> & Reliability
@@ -88,9 +88,9 @@ const Hero = () => {
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap gap-3"
+              className="flex flex-col sm:flex-row flex-wrap gap-3"
             >
-              <Button asChild size="lg" className="text-base px-8">
+              <Button asChild size="lg" className="text-base px-8 w-full sm:w-auto">
                 <Link to="/contact">
                   Get a Quote <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
@@ -99,7 +99,7 @@ const Hero = () => {
                 asChild
                 variant="outline"
                 size="lg"
-                className="text-base px-8"
+                className="text-base px-8 w-full sm:w-auto"
               >
                 <Link to="/contact">
                   <Calendar className="w-4 h-4 mr-2" /> Book Site Inspection
@@ -110,7 +110,7 @@ const Hero = () => {
 
           {/* Right column — image + floating stat cards */}
           <motion.div
-            className="relative pt-8 pb-10 pr-16"
+            className="relative pt-4 pb-6 lg:pt-8 lg:pb-10 lg:pr-16"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
@@ -123,7 +123,7 @@ const Hero = () => {
               <img
                 src={heroImg}
                 alt="Commercial cold room installation by Acro Refrigeration"
-                className="w-full h-[400px] lg:h-[500px] object-cover"
+                className="w-full h-[240px] sm:h-[320px] lg:h-[500px] object-cover"
               />
             </div>
 
@@ -131,7 +131,7 @@ const Hero = () => {
               // Outer: handles absolute positioning + entrance animation
               <motion.div
                 key={stat.label}
-                className={`${stat.className} z-10`}
+                className={`hidden lg:block ${stat.className} z-10`}
                 style={stat.motionStyle}
                 initial={{ opacity: 0, scale: 0.75 }}
                 animate={{ opacity: 1, scale: 1 }}

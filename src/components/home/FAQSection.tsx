@@ -19,7 +19,7 @@ const FAQSection = () => (
       <Accordion type="single" collapsible className="space-y-3">
         {faqs.map((faq, i) => (
           <ScrollReveal key={i} delay={i * 60}>
-            <AccordionItem value={`faq-${i}`} className="bg-card rounded-xl border border-border px-6 shadow-sm hover:shadow-md transition-shadow">
+            <AccordionItem value={`faq-${i}`} className="bg-card rounded-xl border border-border px-4 sm:px-6 shadow-sm hover:shadow-md transition-shadow">
               <AccordionTrigger className="text-left font-semibold text-sm py-5 hover:no-underline">{faq.q}</AccordionTrigger>
               <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-5">{faq.a}</AccordionContent>
             </AccordionItem>

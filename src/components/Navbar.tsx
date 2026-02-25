@@ -62,7 +62,7 @@ const Navbar = () => {
           </Button>
         </div>
 
-        <button onClick={() => setOpen(!open)} className="lg:hidden p-2">
+        <button onClick={() => setOpen(!open)} className="lg:hidden p-2.5 -mr-1">
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
@@ -86,6 +86,12 @@ const Navbar = () => {
             ))}
           </nav>
           <div className="mt-4 flex flex-col gap-2">
+            <a
+              href="tel:1300227600"
+              className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Phone className="w-4 h-4" /> 1300 227 600
+            </a>
             <Button asChild className="w-full">
               <Link to="/contact" onClick={() => setOpen(false)}>
                 Get a Quote

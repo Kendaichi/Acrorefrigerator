@@ -5,7 +5,7 @@ import acroLogo from "@/assets/acro-logo.png";
 const Footer = () => (
   <footer className="bg-dark text-dark-foreground">
     <div className="container-narrow section-padding">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-16">
         <div>
           <div className="flex items-center gap-2 font-extrabold text-xl mb-4">
             <img

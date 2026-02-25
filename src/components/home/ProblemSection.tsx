@@ -11,7 +11,7 @@ const problems = [
 const ProblemSection = () => (
   <section className="dark-section section-padding">
     <div className="container-narrow">
-      <ScrollReveal className="text-center mb-16">
+      <ScrollReveal className="text-center mb-10 md:mb-16">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
           The Real Cost of a Poorly Designed Cold Room
         </h2>
@@ -19,7 +19,7 @@ const ProblemSection = () => (
           Every year, Australian businesses lose thousands to avoidable refrigeration problems.
         </p>
       </ScrollReveal>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {problems.map((p, i) => (
           <ScrollReveal key={p.title} delay={i * 100}>
             <div className="bg-dark-foreground/5 rounded-2xl p-6 border border-dark-foreground/10 hover-lift h-full">

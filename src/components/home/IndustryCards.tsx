@@ -13,18 +13,18 @@ const industries = [
 const IndustryCards = () => (
   <section className="section-padding bg-secondary">
     <div className="container-narrow">
-      <ScrollReveal className="text-center mb-16">
+      <ScrollReveal className="text-center mb-10 md:mb-16">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Industries We Serve</h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
           Tailored refrigeration solutions for every sector.
         </p>
       </ScrollReveal>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {industries.map((ind, i) => (
           <ScrollReveal key={ind.title} delay={i * 80}>
             <Link
               to="/industries"
-              className="block bg-card rounded-2xl p-6 border border-border shadow-sm hover-lift group hover:border-primary/20 h-full"
+              className="block bg-card rounded-2xl p-4 md:p-6 border border-border shadow-sm hover-lift group hover:border-primary/20 h-full"
             >
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                 <ind.icon className="w-5 h-5 text-primary" />

@@ -10,7 +10,7 @@ const steps = [
 const SolutionSection = () => (
   <section className="section-padding bg-background">
     <div className="container-narrow">
-      <ScrollReveal className="text-center mb-16">
+      <ScrollReveal className="text-center mb-10 md:mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4">
           How We Work
         </div>
@@ -19,10 +19,10 @@ const SolutionSection = () => (
           One expert team. One accountable process. From design to certification.
         </p>
       </ScrollReveal>
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-5 md:gap-8">
         {steps.map((s, i) => (
           <ScrollReveal key={s.step} delay={i * 150}>
-            <div className="bg-card rounded-2xl p-8 border border-border shadow-sm hover-lift h-full group">
+            <div className="bg-card rounded-2xl p-5 md:p-8 border border-border shadow-sm hover-lift h-full group">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-xl gradient-cta flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <s.icon className="w-6 h-6 text-primary-foreground" />

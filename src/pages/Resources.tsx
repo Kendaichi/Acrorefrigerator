@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { ArrowRight, BookOpen, FileText, Video } from "lucide-react";
 import CTABanner from "@/components/home/CTABanner";
 import { motion, Variants } from "framer-motion";
@@ -28,6 +29,11 @@ const cardVariant: Variants = {
 
 const Resources = () => (
   <Layout>
+    <SEO
+      title="Guides, Articles & Resources"
+      description="Expert guides and articles on commercial refrigeration, HACCP compliance, energy efficiency and cold room maintenance. Free resources from Acro Refrigeration."
+      canonical="/resources"
+    />
     <section className="section-padding bg-background">
       <div className="container-narrow">
         <motion.div

@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
@@ -45,6 +46,11 @@ const cardVariant: Variants = {
 
 const Pricing = () => (
   <Layout>
+    <SEO
+      title="Commercial Refrigeration Pricing"
+      description="Transparent pricing for commercial cold rooms and refrigeration systems. Standard cold rooms from $15,000. Get a custom quote for your project."
+      canonical="/pricing"
+    />
     <section className="section-padding bg-background">
       <div className="container-narrow">
         <motion.div

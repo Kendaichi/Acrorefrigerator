@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { UtensilsCrossed, ShoppingCart, Pill, Warehouse, Factory, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -30,6 +31,11 @@ const featureStagger: Variants = {
 
 const Industries = () => (
   <Layout>
+    <SEO
+      title="Industries We Serve"
+      description="Specialist commercial refrigeration for restaurants, supermarkets, pharmaceuticals, warehousing and food production. HACCP and TGA compliant cold room solutions across Australia."
+      canonical="/industries"
+    />
     <section className="section-padding bg-background">
       <div className="container-narrow">
         <motion.div

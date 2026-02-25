@@ -1,17 +1,56 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageSquare, Search, PenTool, Hammer, HardHat, CheckCircle } from "lucide-react";
+import {
+  ArrowRight,
+  MessageSquare,
+  Search,
+  PenTool,
+  Hammer,
+  HardHat,
+  CheckCircle,
+} from "lucide-react";
 import CTABanner from "@/components/home/CTABanner";
 import { motion, Variants } from "framer-motion";
 
 const steps = [
-  { icon: MessageSquare, num: "01", title: "Consultation", desc: "We start with a detailed conversation about your business needs, compliance requirements, budget and timeline. No obligation." },
-  { icon: Search, num: "02", title: "Site Inspection", desc: "Our engineers visit your site to assess available space, power supply, access points and any structural considerations." },
-  { icon: PenTool, num: "03", title: "Engineering & Design", desc: "We create detailed CAD drawings, perform thermal load calculations, and specify all components for your approval." },
-  { icon: Hammer, num: "04", title: "Fabrication", desc: "Panels, frames, and components are precision-manufactured in our workshop to exact specifications." },
-  { icon: HardHat, num: "05", title: "Installation", desc: "Our certified installation team fits out your cold room with minimal disruption to your operations." },
-  { icon: CheckCircle, num: "06", title: "Certification & Handover", desc: "We commission the system, run compliance testing, and hand over full documentation including maintenance guides." },
+  {
+    icon: MessageSquare,
+    num: "01",
+    title: "Consultation",
+    desc: "We start with a detailed conversation about your business needs, compliance requirements, budget and timeline. No obligation.",
+  },
+  {
+    icon: Search,
+    num: "02",
+    title: "Site Inspection",
+    desc: "Our engineers visit your site to assess available space, power supply, access points and any structural considerations.",
+  },
+  {
+    icon: PenTool,
+    num: "03",
+    title: "Engineering & Design",
+    desc: "We create detailed CAD drawings, perform thermal load calculations, and specify all components for your approval.",
+  },
+  {
+    icon: Hammer,
+    num: "04",
+    title: "Fabrication",
+    desc: "Panels, frames, and components are precision-manufactured in our workshop to exact specifications.",
+  },
+  {
+    icon: HardHat,
+    num: "05",
+    title: "Installation",
+    desc: "Our certified installation team fits out your cold room with minimal disruption to your operations.",
+  },
+  {
+    icon: CheckCircle,
+    num: "06",
+    title: "Certification & Handover",
+    desc: "We commission the system, run compliance testing, and hand over full documentation including maintenance guides.",
+  },
 ];
 
 const fadeUp: Variants = {
@@ -21,17 +60,38 @@ const fadeUp: Variants = {
 
 const Process = () => (
   <Layout>
+    <SEO
+      title="Our Project Process"
+      description="From consultation to certification — see how Acro Refrigeration delivers your commercial cold room project on time, on spec and on budget. 6-step process."
+      canonical="/process"
+    />
     <section className="section-padding bg-background">
       <div className="container-narrow">
         <motion.div
           className="max-w-3xl mb-16"
           initial="hidden"
           animate="visible"
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.1 } },
+          }}
         >
-          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4">Our Process</motion.div>
-          <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-extrabold mb-6">How We Deliver Your Project</motion.h1>
-          <motion.p variants={fadeUp} className="text-lg text-muted-foreground">A transparent, structured process that keeps you informed at every stage.</motion.p>
+          <motion.div
+            variants={fadeUp}
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4"
+          >
+            Our Process
+          </motion.div>
+          <motion.h1
+            variants={fadeUp}
+            className="text-4xl md:text-5xl font-extrabold mb-6"
+          >
+            How We Deliver Your Project
+          </motion.h1>
+          <motion.p variants={fadeUp} className="text-lg text-muted-foreground">
+            A transparent, structured process that keeps you informed at every
+            stage.
+          </motion.p>
         </motion.div>
 
         <div className="space-y-6">
@@ -56,7 +116,9 @@ const Process = () => (
                   <s.icon className="w-5 h-5 text-primary" />
                   <h3 className="text-xl font-bold">{s.title}</h3>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {s.desc}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -70,7 +132,9 @@ const Process = () => (
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <Button asChild size="lg" className="text-base px-8">
-            <Link to="/contact">Start Your Project <ArrowRight className="w-4 h-4 ml-2" /></Link>
+            <Link to="/contact">
+              Start Your Project <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
           </Button>
         </motion.div>
       </div>

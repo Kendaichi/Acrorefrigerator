@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -31,6 +32,11 @@ const cardVariant: Variants = {
 
 const Projects = () => (
   <Layout>
+    <SEO
+      title="Featured Projects"
+      description="Browse our portfolio of commercial cold room and refrigeration projects across Sydney and Australia — from restaurant coolrooms to large-scale pharmaceutical cold storage."
+      canonical="/projects"
+    />
     <section className="section-padding bg-background">
       <div className="container-narrow">
         <motion.div

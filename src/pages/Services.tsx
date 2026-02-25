@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Snowflake, Wrench, ShieldCheck, Thermometer, Clock, BarChart3 } from "lucide-react";
@@ -32,6 +33,11 @@ const cardVariant: Variants = {
 
 const Services = () => (
   <Layout>
+    <SEO
+      title="Commercial Refrigeration Services"
+      description="End-to-end commercial refrigeration services including cold room construction, system installation, HACCP compliance, smart monitoring and 24/7 emergency repairs across Sydney & NSW."
+      canonical="/services"
+    />
     <section className="section-padding bg-background">
       <div className="container-narrow">
         <motion.div

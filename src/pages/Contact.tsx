@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -71,6 +72,11 @@ const contactItems = [
 
 const Contact = () => (
   <Layout>
+    <SEO
+      title="Contact Us"
+      description="Get a free consultation and quote for your commercial refrigeration project. Call 1300 227 600 or enquire online. Acro Refrigeration — Sydney & NSW."
+      canonical="/contact"
+    />
     <section className="section-padding bg-background">
       <div className="container-narrow">
         <div className="grid lg:grid-cols-2 gap-16">

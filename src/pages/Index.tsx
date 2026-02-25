@@ -7,6 +7,7 @@ import CapabilitiesGrid from "@/components/home/CapabilitiesGrid";
 import ProcessTimeline from "@/components/home/ProcessTimeline";
 import IndustryCards from "@/components/home/IndustryCards";
 import Testimonials from "@/components/home/Testimonials";
+import ClientsSection from "@/components/home/ClientsSection";
 import CTABanner from "@/components/home/CTABanner";
 import FAQSection from "@/components/home/FAQSection";
 
@@ -20,6 +21,7 @@ const Index = () => (
     <ProcessTimeline />
     <IndustryCards />
     <Testimonials />
+    <ClientsSection />
     <CTABanner />
     <FAQSection />
   </Layout>

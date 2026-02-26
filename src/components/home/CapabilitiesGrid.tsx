@@ -5,7 +5,7 @@ const capabilities = [
   {
     icon: Clock,
     title: "24/7 Emergency Call-Outs",
-    desc: "Round-the-clock availability for breakdowns — average 2-hour response across Sydney and regional NSW.",
+    desc: "Round-the-clock availability for breakdowns — average 2-hour response across Brisbane, Gold Coast and SE Queensland.",
   },
   {
     icon: Wrench,

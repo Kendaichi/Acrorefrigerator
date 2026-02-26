@@ -9,7 +9,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 const faqs = [
   {
     q: "How quickly can you respond to an emergency breakdown?",
-    a: "We offer 24/7 emergency call-outs with an average response time of 2 hours across Sydney and regional NSW. For critical systems, we prioritise same-hour dispatch.",
+    a: "We offer 24/7 emergency call-outs with an average response time of 2 hours across Brisbane, Gold Coast and SE Queensland. For critical systems, we prioritise same-hour dispatch.",
   },
   {
     q: "Do you service all refrigeration brands?",
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "What areas do you service?",
-    a: "We service the greater Sydney metropolitan area and regional NSW. For large-scale or national clients, we can mobilise teams across Australia.",
+    a: "We service Brisbane, Gold Coast, Sunshine Coast and SE Queensland. For large-scale or national clients, we can mobilise teams across Australia.",
   },
 ];
 

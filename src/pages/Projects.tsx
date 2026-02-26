@@ -21,7 +21,7 @@ const projects = [
     desc: "2am compressor failure at a high-volume waterfront restaurant. Technician on-site within 90 minutes, system restored before morning prep.",
   },
   {
-    title: "PharmaLogix Sydney",
+    title: "PharmaLogix Brisbane",
     type: "Maintenance & Monitoring",
     size: "120 sqm facility",
     desc: "TGA-compliant maintenance contract with 24/7 remote monitoring. Zero temperature excursions since program inception.",
@@ -64,7 +64,7 @@ const Projects = () => (
   <Layout>
     <SEO
       title="Featured Projects"
-      description="Browse our portfolio of commercial cold room and refrigeration projects across Sydney and Australia — from restaurant coolrooms to large-scale pharmaceutical cold storage."
+      description="Browse our portfolio of commercial cold room and refrigeration projects across Brisbane, SE Queensland and Australia — from restaurant coolrooms to large-scale pharmaceutical cold storage."
       canonical="/projects"
     />
     <section className="section-padding bg-background">

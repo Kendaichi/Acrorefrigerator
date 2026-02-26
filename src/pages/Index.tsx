@@ -22,20 +22,20 @@ const localBusinessSchema = {
   "email": "info@acrorefrigeration.com.au",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Sydney",
-    "addressRegion": "NSW",
+    "addressLocality": "Brisbane",
+    "addressRegion": "QLD",
     "addressCountry": "AU"
   },
   "openingHours": "Mo-Fr 07:00-17:00",
-  "areaServed": ["Sydney", "NSW", "Australia"],
+  "areaServed": ["Brisbane", "Gold Coast", "Sunshine Coast", "SE Queensland", "Australia"],
   "priceRange": "$$"
 };
 
 const Index = () => (
   <Layout>
     <SEO
-      title="Commercial Refrigeration Repair & Maintenance Sydney"
-      description="24/7 emergency repairs, preventative maintenance plans and cold room builds for commercial refrigeration systems. Fast response, HACCP-certified. Serving Sydney & NSW."
+      title="Commercial Refrigeration Repair & Maintenance Brisbane"
+      description="24/7 emergency repairs, preventative maintenance plans and cold room builds for commercial refrigeration systems. Fast response, HACCP-certified. Serving Brisbane & SE Queensland."
       canonical="/"
     />
     <script

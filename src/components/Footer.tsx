@@ -18,11 +18,11 @@ const Footer = () => (
           <p className="text-dark-foreground/60 text-sm leading-relaxed mb-6">
             Australia's trusted commercial refrigeration contractor. 24/7
             emergency repairs, maintenance plans and cold room builds across
-            Sydney & NSW.
+            SE Queensland.
           </p>
           <div className="flex flex-col gap-3 text-sm text-dark-foreground/60">
             <a
-              href="tel:1300000000"
+              href="tel:1300227600"
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
               <Phone className="w-4 h-4" /> 1300 227 600
@@ -34,7 +34,7 @@ const Footer = () => (
               <Mail className="w-4 h-4" /> info@acrorefrigeration.com.au
             </a>
             <span className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" /> Sydney, NSW Australia
+              <MapPin className="w-4 h-4" /> Brisbane, SE Queensland
             </span>
           </div>
           <div className="flex items-center gap-3 mt-6">
@@ -207,7 +207,7 @@ const Footer = () => (
       <div className="border-t border-dark-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-dark-foreground/40">
         <p>
           © {new Date().getFullYear()} Acro Refrigeration. All rights reserved.
-          ABN 00 000 000 000
+          ABN 43 672 578 264
         </p>
         <div className="flex gap-6">
           <Link to="/privacy" className="hover:text-primary transition-colors">

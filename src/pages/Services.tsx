@@ -21,7 +21,7 @@ const services = [
   {
     icon: Clock,
     title: "24/7 Emergency Repairs",
-    desc: "Round-the-clock emergency breakdown service with rapid response times across greater Sydney and regional NSW.",
+    desc: "Round-the-clock emergency breakdown service with rapid response times across Brisbane, Gold Coast and SE Queensland.",
   },
   {
     icon: Wrench,
@@ -68,7 +68,7 @@ const Services = () => (
   <Layout>
     <SEO
       title="Commercial Refrigeration Services"
-      description="End-to-end commercial refrigeration services including cold room construction, system installation, HACCP compliance, smart monitoring and 24/7 emergency repairs across Sydney & NSW."
+      description="End-to-end commercial refrigeration services including cold room construction, system installation, HACCP compliance, smart monitoring and 24/7 emergency repairs across Brisbane & SE Queensland."
       canonical="/services"
     />
     <section className="section-padding bg-background">

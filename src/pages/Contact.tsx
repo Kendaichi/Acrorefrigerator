@@ -30,7 +30,7 @@ const Contact = () => (
   <Layout>
     <SEO
       title="Contact Us"
-      description="Request a quote for emergency repairs, maintenance plans or a new cold room build. Fast response, HACCP-certified. Acro Refrigeration — Sydney & NSW."
+      description="Request a quote for emergency repairs, maintenance plans or a new cold room build. Fast response, HACCP-certified. Acro Refrigeration — Brisbane & SE Queensland."
       canonical="/contact"
     />
     <section className="section-padding bg-background">
@@ -123,7 +123,7 @@ const Contact = () => (
                 </div>
                 <div>
                   <div className="font-semibold mb-1">Location</div>
-                  <p className="text-muted-foreground">Sydney, NSW Australia</p>
+                  <p className="text-muted-foreground">Brisbane, SE Queensland</p>
                 </div>
               </motion.div>
               <motion.div

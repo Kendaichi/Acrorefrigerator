@@ -94,7 +94,7 @@ const Industries = () => (
   <Layout>
     <SEO
       title="Industries We Serve"
-      description="Specialist commercial refrigeration repairs and maintenance for restaurants, supermarkets, pharmaceuticals, warehousing and food production. HACCP and TGA compliant. Sydney & NSW."
+      description="Specialist commercial refrigeration repairs and maintenance for restaurants, supermarkets, pharmaceuticals, warehousing and food production. HACCP and TGA compliant. Brisbane & SE Queensland."
       canonical="/industries"
     />
     <section className="section-padding bg-background">

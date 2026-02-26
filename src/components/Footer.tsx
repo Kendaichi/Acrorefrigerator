@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
 import acroLogo from "@/assets/acro-logo.png";
 
 const Footer = () => (
@@ -36,6 +36,26 @@ const Footer = () => (
             <span className="flex items-center gap-2">
               <MapPin className="w-4 h-4" /> Sydney, NSW Australia
             </span>
+          </div>
+          <div className="flex items-center gap-3 mt-6">
+            <a
+              href="https://www.facebook.com/acrorefrigeration/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="w-9 h-9 rounded-lg bg-dark-foreground/10 flex items-center justify-center text-dark-foreground/60 hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              <Facebook className="w-4 h-4" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/acro-refrigeration-qld/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="w-9 h-9 rounded-lg bg-dark-foreground/10 flex items-center justify-center text-dark-foreground/60 hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
           </div>
         </div>
 

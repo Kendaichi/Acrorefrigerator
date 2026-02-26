@@ -117,7 +117,7 @@ const Services = () => (
           </div>
           <Button asChild size="lg" variant="secondary" className="shrink-0">
             <a href="tel:1300000000">
-              <Phone className="w-4 h-4 mr-2" /> 1300 000 000
+              <Phone className="w-4 h-4 mr-2" /> 1300 227 600
             </a>
           </Button>
         </motion.div>

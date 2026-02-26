@@ -10,46 +10,50 @@ import {
   Hammer,
   HardHat,
   CheckCircle,
+  Phone,
+  Wrench,
+  Monitor,
+  FileText,
 } from "lucide-react";
 import CTABanner from "@/components/home/CTABanner";
 import { motion, Variants } from "framer-motion";
 
 const steps = [
   {
-    icon: MessageSquare,
+    icon: Phone,
     num: "01",
-    title: "Consultation",
-    desc: "We start with a detailed conversation about your business needs, compliance requirements, budget and timeline. No obligation.",
+    title: "You Call — 24/7",
+    desc: "Speak to a real technician on our 24/7 emergency hotline. No call centres, no waiting. We triage your issue immediately.",
   },
   {
     icon: Search,
     num: "02",
-    title: "Site Inspection",
-    desc: "Our engineers visit your site to assess available space, power supply, access points and any structural considerations.",
+    title: "We Dispatch & Diagnose",
+    desc: "The nearest qualified technician is dispatched within minutes. On-site fault diagnosis with full cost transparency before any work begins.",
   },
   {
-    icon: PenTool,
+    icon: Wrench,
     num: "03",
-    title: "Engineering & Design",
-    desc: "We create detailed CAD drawings, perform thermal load calculations, and specify all components for your approval.",
-  },
-  {
-    icon: Hammer,
-    num: "04",
-    title: "Fabrication",
-    desc: "Panels, frames, and components are precision-manufactured in our workshop to exact specifications.",
-  },
-  {
-    icon: HardHat,
-    num: "05",
-    title: "Installation",
-    desc: "Our certified installation team fits out your cold room with minimal disruption to your operations.",
+    title: "Repair on First Visit",
+    desc: "We carry common parts and refrigerants on every truck. 98% of repairs are completed on the first visit — minimising your downtime.",
   },
   {
     icon: CheckCircle,
+    num: "04",
+    title: "Test & Certify",
+    desc: "System tested to manufacturer specifications. Compliance documentation provided for HACCP and food safety audits.",
+  },
+  {
+    icon: Monitor,
+    num: "05",
+    title: "Monitor & Prevent",
+    desc: "Optional smart monitoring installed to track temperatures and system health — catching issues before they become breakdowns.",
+  },
+  {
+    icon: FileText,
     num: "06",
-    title: "Certification & Handover",
-    desc: "We commission the system, run compliance testing, and hand over full documentation including maintenance guides.",
+    title: "Ongoing Maintenance",
+    desc: "Move from reactive to proactive with a scheduled maintenance plan. Extend system life, cut energy costs and stay compliant year-round.",
   },
 ];
 
@@ -124,6 +128,22 @@ const Process = () => (
           ))}
         </div>
 
+        <div className="mt-16 bg-secondary rounded-2xl p-8 md:p-12">
+          <h2 className="text-2xl font-extrabold mb-4">
+            Need a New Cold Room?
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            For new cold room builds, our process includes consultation, site
+            inspection, engineering & design, fabrication, installation and
+            HACCP certification — typically 4–8 weeks from approval to handover.
+          </p>
+          <Button asChild>
+            <Link to="/contact">
+              Request a Build Quote <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+          </Button>
+        </div>
+
         <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
@@ -132,9 +152,10 @@ const Process = () => (
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <Button asChild size="lg" className="text-base px-8">
-            <Link to="/contact">
-              Start Your Project <ArrowRight className="w-4 h-4 ml-2" />
-            </Link>
+            <a href="tel:1300227600">
+              <Phone className="w-4 h-4 mr-2" /> Call Now — 24/7{" "}
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </a>
           </Button>
         </motion.div>
       </div>

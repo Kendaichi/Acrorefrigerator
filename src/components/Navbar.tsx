@@ -51,7 +51,7 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="tel:1300000000"
+            href="tel:1300227600"
             className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             <Phone className="w-4 h-4" />
@@ -62,7 +62,10 @@ const Navbar = () => {
           </Button>
         </div>
 
-        <button onClick={() => setOpen(!open)} className="lg:hidden p-2.5 -mr-1">
+        <button
+          onClick={() => setOpen(!open)}
+          className="lg:hidden p-2.5 -mr-1"
+        >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>

@@ -16,7 +16,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Acro Refrigeration",
-  "description": "Australia's trusted commercial refrigeration contractor. Custom cold room design, installation and HACCP certification.",
+  "description": "Australia's trusted commercial refrigeration contractor. 24/7 emergency repairs, preventative maintenance plans and custom cold room builds. HACCP-certified.",
   "url": "https://acrorefrigeration.com.au",
   "telephone": "1300227600",
   "email": "info@acrorefrigeration.com.au",
@@ -34,8 +34,8 @@ const localBusinessSchema = {
 const Index = () => (
   <Layout>
     <SEO
-      title="Commercial Cold Room Construction Sydney"
-      description="Australia's trusted commercial refrigeration contractor. Custom cold room design, installation and HACCP certification. Serving Sydney & NSW since 1972."
+      title="Commercial Refrigeration Repair & Maintenance Sydney"
+      description="24/7 emergency repairs, preventative maintenance plans and cold room builds for commercial refrigeration systems. Fast response, HACCP-certified. Serving Sydney & NSW."
       canonical="/"
     />
     <script

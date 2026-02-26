@@ -16,8 +16,9 @@ const Footer = () => (
             Acro Refrigeration
           </div>
           <p className="text-dark-foreground/60 text-sm leading-relaxed mb-6">
-            Australia's trusted commercial refrigeration contractor since 1972.
-            Design, installation and certification — all under one roof.
+            Australia's trusted commercial refrigeration contractor. 24/7
+            emergency repairs, maintenance plans and cold room builds across
+            Sydney & NSW.
           </p>
           <div className="flex flex-col gap-3 text-sm text-dark-foreground/60">
             <a
@@ -48,15 +49,7 @@ const Footer = () => (
                 to="/services"
                 className="hover:text-primary transition-colors"
               >
-                Cold Room Construction
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/services"
-                className="hover:text-primary transition-colors"
-              >
-                Refrigeration Systems
+                24/7 Emergency Repairs
               </Link>
             </li>
             <li>
@@ -72,7 +65,7 @@ const Footer = () => (
                 to="/services"
                 className="hover:text-primary transition-colors"
               >
-                24/7 Emergency Repairs
+                Compliance & Certification
               </Link>
             </li>
             <li>
@@ -81,6 +74,14 @@ const Footer = () => (
                 className="hover:text-primary transition-colors"
               >
                 Energy Audits
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services"
+                className="hover:text-primary transition-colors"
+              >
+                Cold Room Construction
               </Link>
             </li>
           </ul>

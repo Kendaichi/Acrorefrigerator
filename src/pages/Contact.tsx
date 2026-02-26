@@ -26,59 +26,37 @@ const slideRight: Variants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const contactItems = [
-  {
-    icon: Phone,
-    label: "Phone",
-    content: (
-      <a
-        href="tel:1300000000"
-        className="text-muted-foreground hover:text-primary transition-colors"
-      >
-        1300 227 600
-      </a>
-    ),
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    content: (
-      <a
-        href="mailto:info@acrorefrigeration.com.au"
-        className="text-muted-foreground hover:text-primary transition-colors"
-      >
-        info@acrorefrigeration.com.au
-      </a>
-    ),
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    content: <p className="text-muted-foreground">Sydney, NSW Australia</p>,
-  },
-  {
-    icon: Clock,
-    label: "Business Hours",
-    content: (
-      <>
-        <p className="text-muted-foreground">Mon–Fri: 7am – 5pm AEST</p>
-        <p className="text-sm text-muted-foreground">
-          24/7 Emergency Service Available
-        </p>
-      </>
-    ),
-  },
-];
-
 const Contact = () => (
   <Layout>
     <SEO
       title="Contact Us"
-      description="Get a free consultation and quote for your commercial refrigeration project. Call 1300 227 600 or enquire online. Acro Refrigeration — Sydney & NSW."
+      description="Request a quote for emergency repairs, maintenance plans or a new cold room build. Fast response, HACCP-certified. Acro Refrigeration — Sydney & NSW."
       canonical="/contact"
     />
     <section className="section-padding bg-background">
       <div className="container-narrow">
+        {/* Emergency banner */}
+        <motion.div
+          className="gradient-cta rounded-2xl p-6 md:p-8 mb-12 flex flex-col md:flex-row items-center justify-between gap-4"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+        >
+          <div>
+            <h2 className="text-xl md:text-2xl font-extrabold text-primary-foreground mb-1">
+              Need Emergency Repair?
+            </h2>
+            <p className="text-primary-foreground/80 text-sm">
+              Skip the form — call now for 24/7 priority dispatch.
+            </p>
+          </div>
+          <Button asChild size="lg" variant="secondary" className="shrink-0">
+            <a href="tel:1300000000">
+              <Phone className="w-4 h-4 mr-2" /> 1300 227 600
+            </a>
+          </Button>
+        </motion.div>
+
         <div className="grid lg:grid-cols-2 gap-16">
           <motion.div variants={stagger} initial="hidden" animate="visible">
             <motion.div
@@ -91,32 +69,80 @@ const Contact = () => (
               variants={fadeUp}
               className="text-4xl md:text-5xl font-extrabold mb-6"
             >
-              Let's Discuss Your Project
+              Get a Service or Build Quote
             </motion.h1>
             <motion.p
               variants={fadeUp}
               className="text-lg text-muted-foreground mb-10"
             >
-              Get a free consultation and custom quote. Our team typically
-              responds within 2 business hours.
+              Whether you need emergency repairs, a maintenance plan, or a new
+              cold room — we'll get back to you within 2 business hours.
             </motion.p>
 
             <motion.div variants={stagger} className="space-y-6">
-              {contactItems.map((item) => (
-                <motion.div
-                  key={item.label}
-                  variants={slideLeft}
-                  className="flex items-start gap-4"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <item.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-semibold mb-1">{item.label}</div>
-                    {item.content}
-                  </div>
-                </motion.div>
-              ))}
+              <motion.div
+                variants={slideLeft}
+                className="flex items-start gap-4"
+              >
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <Phone className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="font-semibold mb-1">24/7 Emergency Line</div>
+                  <a
+                    href="tel:1300000000"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    1300 000 000
+                  </a>
+                </div>
+              </motion.div>
+              <motion.div
+                variants={slideLeft}
+                className="flex items-start gap-4"
+              >
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <Mail className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="font-semibold mb-1">Email</div>
+                  <a
+                    href="mailto:info@acrorefrigeration.com.au"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    info@acrorefrigeration.com.au
+                  </a>
+                </div>
+              </motion.div>
+              <motion.div
+                variants={slideLeft}
+                className="flex items-start gap-4"
+              >
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="font-semibold mb-1">Location</div>
+                  <p className="text-muted-foreground">Sydney, NSW Australia</p>
+                </div>
+              </motion.div>
+              <motion.div
+                variants={slideLeft}
+                className="flex items-start gap-4"
+              >
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <Clock className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="font-semibold mb-1">Business Hours</div>
+                  <p className="text-muted-foreground">
+                    Mon–Fri: 7am – 5pm AEST
+                  </p>
+                  <p className="text-sm text-primary font-semibold">
+                    24/7 Emergency Service Available
+                  </p>
+                </div>
+              </motion.div>
             </motion.div>
           </motion.div>
 
@@ -156,16 +182,23 @@ const Contact = () => (
               </div>
               <div>
                 <label className="text-sm font-medium mb-1.5 block">
-                  Company
+                  Service Required
                 </label>
-                <Input placeholder="Your business name" />
+                <select className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm">
+                  <option>Emergency Repair</option>
+                  <option>Maintenance Plan</option>
+                  <option>System Upgrade</option>
+                  <option>New Cold Room Build</option>
+                  <option>Smart Monitoring</option>
+                  <option>Other</option>
+                </select>
               </div>
               <div>
                 <label className="text-sm font-medium mb-1.5 block">
-                  Project Details
+                  Details
                 </label>
                 <Textarea
-                  placeholder="Tell us about your refrigeration needs, timeline and any specific requirements."
+                  placeholder="Describe your issue or requirements — equipment type, urgency, location, etc."
                   rows={4}
                 />
               </div>

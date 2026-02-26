@@ -58,7 +58,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left column */}
           <motion.div
-            className="max-w-xl"
+            className="max-w-2xl"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -74,23 +74,29 @@ const Hero = () => {
               variants={itemVariants}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6"
             >
-              Commercial Cold Rooms Built for{" "}
-              <span className="text-primary">Compliance</span> & Reliability
+              Commercial Refrigeration
+              <span className="text-primary"> Repair & Maintenance</span>:
+              Keeping Your Cold Chain Unbroken 24/7
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-md"
             >
-              Design, installation and certification handled by one expert team.
-              HACCP-compliant systems built to last.
+              Breakdowns don't wait — neither do we. Fast emergency repairs,
+              preventative maintenance plans, and expert servicing for all
+              commercial refrigeration systems.
             </motion.p>
 
             <motion.div
               variants={itemVariants}
               className="flex flex-col sm:flex-row flex-wrap gap-3"
             >
-              <Button asChild size="lg" className="text-base px-8 w-full sm:w-auto">
+              <Button
+                asChild
+                size="lg"
+                className="text-base px-8 w-full sm:w-auto"
+              >
                 <Link to="/contact">
                   Get a Quote <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>

@@ -1,10 +1,10 @@
-import { Shield, Award, Clock, Headphones } from "lucide-react";
+import { Shield, Clock, Headphones, Wrench } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const badges = [
   { icon: Clock, label: "Since 1972", desc: "50+ years of expertise" },
   { icon: Shield, label: "HACCP Compliant", desc: "Certified systems" },
-  { icon: Award, label: "5 Year Warranty", desc: "On all installations" },
+  { icon: Wrench, label: "98% First-Visit Fix", desc: "Get back online fast" },
   { icon: Headphones, label: "24/7 Support", desc: "Emergency response" },
 ];
 

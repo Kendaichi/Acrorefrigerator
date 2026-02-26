@@ -1,11 +1,33 @@
-import { AlertTriangle, ThermometerSnowflake, Ban, TrendingDown } from "lucide-react";
+import {
+  AlertTriangle,
+  ThermometerSnowflake,
+  Ban,
+  TrendingDown,
+  Clock,
+} from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const problems = [
-  { icon: AlertTriangle, title: "Compliance Failures", desc: "Non-compliant cold rooms risk health inspector shutdowns and costly fines." },
-  { icon: ThermometerSnowflake, title: "Temperature Breakdowns", desc: "Poor design causes uneven cooling, leading to spoiled stock and revenue loss." },
-  { icon: Ban, title: "Unreliable Contractors", desc: "Fragmented teams mean finger-pointing when something goes wrong." },
-  { icon: TrendingDown, title: "Energy Waste", desc: "Inefficient systems can cost thousands extra per year in electricity bills." },
+  {
+    icon: AlertTriangle,
+    title: "Unexpected Breakdowns",
+    desc: "A failed compressor at 2am means thousands in spoiled stock by morning.",
+  },
+  {
+    icon: ThermometerSnowflake,
+    title: "Temperature Drift",
+    desc: "Gradual temperature creep goes unnoticed until a health inspector flags it.",
+  },
+  {
+    icon: Clock,
+    title: "Slow Response Times",
+    desc: "Most contractors take 24–48 hours. Your cold chain can't wait that long.",
+  },
+  {
+    icon: TrendingDown,
+    title: "Rising Energy Bills",
+    desc: "Poorly maintained systems consume up to 40% more power than they should.",
+  },
 ];
 
 const ProblemSection = () => (
@@ -13,10 +35,11 @@ const ProblemSection = () => (
     <div className="container-narrow">
       <ScrollReveal className="text-center mb-10 md:mb-16">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-          The Real Cost of a Poorly Designed Cold Room
+          What Happens When Your Refrigeration Fails?
         </h2>
         <p className="text-dark-foreground/60 text-lg max-w-2xl mx-auto">
-          Every year, Australian businesses lose thousands to avoidable refrigeration problems.
+          Every hour of downtime costs Australian businesses hundreds —
+          sometimes thousands — in lost revenue and stock.
         </p>
       </ScrollReveal>
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -27,7 +50,9 @@ const ProblemSection = () => (
                 <p.icon className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-bold mb-2">{p.title}</h3>
-              <p className="text-sm text-dark-foreground/60 leading-relaxed">{p.desc}</p>
+              <p className="text-sm text-dark-foreground/60 leading-relaxed">
+                {p.desc}
+              </p>
             </div>
           </ScrollReveal>
         ))}

@@ -6,8 +6,10 @@ import SolutionSection from "@/components/home/SolutionSection";
 import CapabilitiesGrid from "@/components/home/CapabilitiesGrid";
 import ProcessTimeline from "@/components/home/ProcessTimeline";
 import IndustryCards from "@/components/home/IndustryCards";
+import BrandsSection from "@/components/home/BrandsSection";
 import Testimonials from "@/components/home/Testimonials";
 import ClientsSection from "@/components/home/ClientsSection";
+import LocationsSection from "@/components/home/LocationsSection";
 import CTABanner from "@/components/home/CTABanner";
 import FAQSection from "@/components/home/FAQSection";
 import SEO from "@/components/SEO";
@@ -49,8 +51,10 @@ const Index = () => (
     <CapabilitiesGrid />
     <ProcessTimeline />
     <IndustryCards />
+    <BrandsSection />
     <Testimonials />
     <ClientsSection />
+    <LocationsSection />
     <CTABanner />
     <FAQSection />
   </Layout>

@@ -93,7 +93,7 @@ const Contact = () => (
                     href="tel:1300000000"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    1300 000 000
+                    1300 227 600
                   </a>
                 </div>
               </motion.div>
@@ -123,7 +123,9 @@ const Contact = () => (
                 </div>
                 <div>
                   <div className="font-semibold mb-1">Location</div>
-                  <p className="text-muted-foreground">Brisbane, SE Queensland</p>
+                  <p className="text-muted-foreground">
+                    Brisbane, SE Queensland
+                  </p>
                 </div>
               </motion.div>
               <motion.div

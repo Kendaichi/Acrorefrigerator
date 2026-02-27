@@ -1,23 +1,20 @@
-import { lazy, Suspense } from "react";
 import { Navigate } from "react-router-dom";
 import type { RouteObject } from "react-router-dom";
 import App from "./App";
-
-const Index = lazy(() => import("./pages/Index"));
-const Services = lazy(() => import("./pages/Services"));
-const Industries = lazy(() => import("./pages/Industries"));
-// const Pricing = lazy(() => import("./pages/Pricing"));
-const Resources = lazy(() => import("./pages/Resources"));
-const Contact = lazy(() => import("./pages/Contact"));
-const NotFound = lazy(() => import("./pages/NotFound"));
-const ServicePage = lazy(() => import("./pages/ServicePage"));
-const IndustryPage = lazy(() => import("./pages/IndustryPage"));
-const Brands = lazy(() => import("./pages/Brands"));
-const BrandPage = lazy(() => import("./pages/BrandPage"));
-const LocationsHub = lazy(() => import("./pages/LocationsHub"));
-const CityHub = lazy(() => import("./pages/CityHub"));
-const SuburbPage = lazy(() => import("./pages/SuburbPage"));
-const ResourcePage = lazy(() => import("./pages/ResourcePage"));
+import Index from "./pages/Index";
+import Services from "./pages/Services";
+import Industries from "./pages/Industries";
+import Resources from "./pages/Resources";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
+import ServicePage from "./pages/ServicePage";
+import IndustryPage from "./pages/IndustryPage";
+import Brands from "./pages/Brands";
+import BrandPage from "./pages/BrandPage";
+import LocationsHub from "./pages/LocationsHub";
+import CityHub from "./pages/CityHub";
+import SuburbPage from "./pages/SuburbPage";
+import ResourcePage from "./pages/ResourcePage";
 
 export const routes: RouteObject[] = [
   {
@@ -26,117 +23,60 @@ export const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: (
-          <Suspense fallback={null}>
-            <Index />
-          </Suspense>
-        ),
+        element: <Index />,
       },
       {
         path: "services",
-        element: (
-          <Suspense fallback={null}>
-            <Services />
-          </Suspense>
-        ),
+        element: <Services />,
       },
       {
         path: "services/:serviceSlug",
-        element: (
-          <Suspense fallback={null}>
-            <ServicePage />
-          </Suspense>
-        ),
+        element: <ServicePage />,
       },
       {
         path: "industries",
-        element: (
-          <Suspense fallback={null}>
-            <Industries />
-          </Suspense>
-        ),
+        element: <Industries />,
       },
       {
         path: "industries/:industrySlug",
-        element: (
-          <Suspense fallback={null}>
-            <IndustryPage />
-          </Suspense>
-        ),
+        element: <IndustryPage />,
       },
       {
         path: "brands",
-        element: (
-          <Suspense fallback={null}>
-            <Brands />
-          </Suspense>
-        ),
+        element: <Brands />,
       },
       {
         path: "brands/:brandSlug",
-        element: (
-          <Suspense fallback={null}>
-            <BrandPage />
-          </Suspense>
-        ),
+        element: <BrandPage />,
       },
       { path: "process", element: <Navigate to="/services" replace /> },
-      // { path: "pricing", element: <Suspense fallback={null}><Pricing /></Suspense> },
       {
         path: "resources",
-        element: (
-          <Suspense fallback={null}>
-            <Resources />
-          </Suspense>
-        ),
+        element: <Resources />,
       },
       {
         path: "resources/:resourceSlug",
-        element: (
-          <Suspense fallback={null}>
-            <ResourcePage />
-          </Suspense>
-        ),
+        element: <ResourcePage />,
       },
       {
         path: "contact-us",
-        element: (
-          <Suspense fallback={null}>
-            <Contact />
-          </Suspense>
-        ),
+        element: <Contact />,
       },
       {
         path: "locations",
-        element: (
-          <Suspense fallback={null}>
-            <LocationsHub />
-          </Suspense>
-        ),
+        element: <LocationsHub />,
       },
       {
         path: "locations/:citySlug",
-        element: (
-          <Suspense fallback={null}>
-            <CityHub />
-          </Suspense>
-        ),
+        element: <CityHub />,
       },
       {
         path: "locations/:citySlug/:suburbSlug",
-        element: (
-          <Suspense fallback={null}>
-            <SuburbPage />
-          </Suspense>
-        ),
+        element: <SuburbPage />,
       },
       {
         path: "*",
-        element: (
-          <Suspense fallback={null}>
-            <NotFound />
-          </Suspense>
-        ),
+        element: <NotFound />,
       },
     ],
   },
